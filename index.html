@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="settings-card">
+            <div class="card-header">
+                <h2>Account Settings</h2>
+                <p>Manage your profile and preferences</p>
+            </div>
+            
+            <form id="settingsForm" novalidate>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="johndoe">
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com">
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">New Password</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••">
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <div class="form-group toggle-group">
+                    <label for="notifications" class="toggle-label">
+                        <span>Email Notifications</span>
+                        <span class="subtitle">Receive updates about your account</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" id="notifications" name="notifications" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Save Changes</button>
+                </div>
+            </form>
+            <div id="successMessage" class="success-message hidden">
+                Settings saved successfully!
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
