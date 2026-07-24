@@ -177,3 +177,10 @@ chore: upgrade mongoose to v8
 - Keep functions **pure** where possible (predictable input → output)
 - Handle **loading, error, and empty states** in every UI component that fetches data
 - Always validate request data on the **server side**, even if also validated on the client
+
+
+## Rules learned from the AI workflow drill (add to CLAUDE.md)
+
+- Forms use `react-hook-form` + `zod` for validation — never hand-rolled string checks or uncontrolled inputs. Both are already devDependencies; a form PR without them fails review.
+- Every form input must have a `<label htmlFor>` and, when it has a validation error, an `aria-describedby` pointing to the error message element — this is a testable check, not a style preference.
+- Any AI agent session that touches the repo must be followed by `git status`/commit-diff review before pushing — check for unrequested file deletions or modifications outside the stated task scope (e.g. `CLAUDE.md`, `LICENSE`), since the agent's own summary is not a reliable record of everything it changed.
